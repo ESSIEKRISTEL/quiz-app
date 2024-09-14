@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(pic.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 3px;
+            /* filter: blur(0px); */
+        }
+        .container{
+            font-size: 25px;
+            color: white;
+            text-align: center;
+        }
+        h2{
+            color: rgb(248, 248, 252);
+            font-style:italic;
+            font-weight: bolder;
+            font-size: 60px;
+            border:  2px solid rgb(238, 9, 238);
+            width: 200px;
+            margin-left: 600px;
+        }
+        button{
+            padding: 10px;
+            background-color: rgb(189, 57, 250);
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>QUIZ</h2>
+
+    <p>Question 1: What is the capital city of Kenya?</p>
+    <button onclick="checkAnswer('question1', 'Nairobi')">A. Nairobi</button><br><br>
+    <button onclick="checkAnswer('question1', 'Kampala')">B. Kampala</button><br><br>
+    <button onclick="checkAnswer('question1', 'France')">C. France</button><br><br>
+
+    <p>Question 2: What is the capital city of uganda?</p>
+    <button onclick="checkAnswer('question2', 'Tanzania')">A. Tanzania</button><br><br>
+    <button onclick="checkAnswer('question2', 'Kampala')">B. Kampala</button><br><br>
+    <button onclick="checkAnswer('question2', 'iraq')">C. irag</button><br><br>
+
+    
+
+    <p>Question 3: HTML in full?</p>
+    <button onclick="checkAnswer('question3', 'home tour mall')">A. home tour mall</button><br><br>
+    <button onclick="checkAnswer('question3', 'none of the both')">B. none of the both</button><br><br>
+    <button onclick="checkAnswer('question3', 'hyper text markup language')">C. hyper text markup language</button><br><br>
+
+    <p>Question 4: The following are programming language except</p>
+    <button onclick="checkAnswer('question4', 'javascript')">A. javascript</button><br><br>
+    <button onclick="checkAnswer('question4', 'python')">B. python</button><br><br>
+    <button onclick="checkAnswer('question4', 'CSS')">C. CSS</button><br><br>
+
+    <p>Question 5: YPG in full?</p>
+    <button onclick="checkAnswer('question5', 'youth power group')">A.youth power group</button><br><br>
+    <button onclick="checkAnswer('question5', 'youth protection ground')">B. youth protection ground</button><br><br>
+    <button onclick="checkAnswer('question5', 'none of the above')">C. none of the above</button><br><br>
+
+    <p id="quizResult"></p>
+    </div>
+    <script>
+        const CorrectAnswers = {
+            question1: 'Nairobi', 
+            question2: 'Kampala',
+            question3: 'hyper text markup language',
+            question4: 'CSS',
+            question5: 'youth power group'
+        };
+
+        function checkAnswer(question, answer) {
+            if (question === 'question1') {
+                if (answer === CorrectAnswers.question1) {
+                    document.getElementById('quizResult').innerHTML = 'Correct!';
+                } else {
+                    document.getElementById('quizResult').innerHTML = 'Wrong answer! Try again.';
+                }
+            } else if (question === 'question2') {
+                if (answer === CorrectAnswers.question2) {
+                    document.getElementById('quizResult').innerHTML = 'Correct!';
+                } else {
+                    document.getElementById('quizResult').innerHTML = 'Wrong answer! Try again.';
+                }
+            } else if (question==='question3'){
+                if(answer===CorrectAnswers.question3){
+                    document.getElementById('quizResult').innerHTML='correct!'
+                }
+                else{
+                    document.getElementById('quizResult').innerHTML='wrong answer! Try again'
+                }
+            }
+            else if(question==='question4'){
+                if(answer===CorrectAnswers.question4){
+                    document.getElementById('quizResult').innerHTML='correct!'
+                }
+                else{
+                    document.getElementById('quizResult').innerHTML='wrong anwser! Try again'
+                }
+            }
+            else if(question==='question5'){
+                if (answer===CorrectAnswers.question5){
+                    document.getElementById('quizResult').innerHTML='correct!'
+                }
+                else{
+                    document.getElementById('quizResult').innerHTML='wrong answer! Try agin'
+                }
+            }
+            else {
+                document.getElementById('quizResult').innerHTML = 'Question not recognized!';
+            }
+        }
+    </script>
+</body>
+</html>
